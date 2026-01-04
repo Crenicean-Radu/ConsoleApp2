@@ -12,3 +12,4 @@ C:\Users\creni\Desktop\POOsem1\ConsoleApp2\ConsoleApp2\obj\Debug\net9.0\refint\C
 C:\Users\creni\Desktop\POOsem1\ConsoleApp2\ConsoleApp2\obj\Debug\net9.0\ConsoleApp2.pdb
 C:\Users\creni\Desktop\POOsem1\ConsoleApp2\ConsoleApp2\obj\Debug\net9.0\ConsoleApp2.genruntimeconfig.cache
 C:\Users\creni\Desktop\POOsem1\ConsoleApp2\ConsoleApp2\obj\Debug\net9.0\ref\ConsoleApp2.dll
+C:\Users\creni\Desktop\POOsem1\ConsoleApp2\ConsoleApp2\obj\Debug\net9.0\ConsoleApp2.sourcelink.json

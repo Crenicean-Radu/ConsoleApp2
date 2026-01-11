@@ -1,0 +1,131 @@
+[
+  {
+    "Abonamente": [
+      {
+        "Id": "16f671b9-bc70-4853-a99f-69c0ca8b22b5",
+        "NumeOferta": "FullTime",
+        "Pret": 150,
+        "DataStart": "2026-01-04T21:52:48.7634477+02:00",
+        "DataSfarsit": "2026-01-24T21:52:48.763556+02:00",
+        "SalaId": "6d04769e-2202-4643-aeda-3483e5d62bcd",
+        "NumeSala": "Befit"
+      },
+      {
+        "Id": "1d222802-f060-44fa-925a-972d17697fb0",
+        "NumeOferta": "Semi",
+        "Pret": 50,
+        "DataStart": "2026-01-06T15:35:05.6035055+02:00",
+        "DataSfarsit": "2026-01-21T15:35:05.6035151+02:00",
+        "SalaId": "29963b28-40c4-4257-8ebe-22cb142c9374",
+        "NumeSala": "Truckers"
+      }
+    ],
+    "RezervariIstoric": [
+      {
+        "Id": "bdf843ad-eecb-4141-9d59-a078f18a89f7",
+        "UsernameClient": "client",
+        "NumeClasa": "Cardio",
+        "DataRezervare": "2026-01-06T15:35:40.729646+02:00"
+      }
+    ],
+    "Username": "client",
+    "Password": "client",
+    "Rol": "Client"
+  },
+  {
+    "Abonamente": [
+      {
+        "Id": "1c6897f2-10f5-4ef7-9d72-7fe6b762abdf",
+        "NumeOferta": "ToataZiua",
+        "Pret": 123,
+        "DataStart": "2026-01-06T15:55:02.8436144+02:00",
+        "DataSfarsit": "2026-01-21T15:55:02.8437453+02:00",
+        "SalaId": "b94ae63d-21eb-461e-b167-19913d57f301",
+        "NumeSala": "Transformers"
+      }
+    ],
+    "RezervariIstoric": [],
+    "Username": "Radu",
+    "Password": "parola",
+    "Rol": "Client"
+  },
+  {
+    "Abonamente": [
+      {
+        "Id": "f58a7596-b82c-4f69-92c2-e36d02296d7a",
+        "NumeOferta": "FullTime",
+        "Pret": 150,
+        "DataStart": "2026-01-06T16:04:14.6731586+02:00",
+        "DataSfarsit": "2026-01-26T16:04:14.6732251+02:00",
+        "SalaId": "6d04769e-2202-4643-aeda-3483e5d62bcd",
+        "NumeSala": "Befit"
+      }
+    ],
+    "RezervariIstoric": [
+      {
+        "Id": "2df78ada-bac6-4320-ab23-26f151886f04",
+        "UsernameClient": "Mihai",
+        "NumeClasa": "Cardio",
+        "DataRezervare": "2026-01-06T16:04:30.0026525+02:00"
+      }
+    ],
+    "Username": "Mihai",
+    "Password": "123",
+    "Rol": "Client"
+  },
+  {
+    "Abonamente": [
+      {
+        "Id": "8acb54eb-763c-4d09-a9db-f4ec61a400e9",
+        "NumeOferta": "FullTime",
+        "Pret": 150,
+        "DataStart": "2026-01-07T21:05:52.4014906+02:00",
+        "DataSfarsit": "2026-01-27T21:05:52.4015635+02:00",
+        "SalaId": "6d04769e-2202-4643-aeda-3483e5d62bcd",
+        "NumeSala": "Befit"
+      }
+    ],
+    "RezervariIstoric": [],
+    "Username": "Alex",
+    "Password": "1234",
+    "Rol": "Client"
+  },
+  {
+    "Abonamente": [],
+    "RezervariIstoric": [],
+    "Username": "Mario",
+    "Password": "1234",
+    "Rol": "Client"
+  },
+  {
+    "Abonamente": [
+      {
+        "Id": "40a62061-70e7-4bee-80f5-9661096e69f6",
+        "NumeOferta": "FullTime",
+        "Pret": 150,
+        "DataStart": "2026-01-11T19:08:59.5427438+02:00",
+        "DataSfarsit": "2026-01-31T19:08:59.5427509+02:00",
+        "SalaId": "6d04769e-2202-4643-aeda-3483e5d62bcd",
+        "NumeSala": "Befit"
+      }
+    ],
+    "RezervariIstoric": [
+      {
+        "Id": "1643f0c1-572e-41e4-906e-c506d71f2e2a",
+        "UsernameClient": "Raul",
+        "NumeClasa": "Cardio",
+        "DataRezervare": "2026-01-11T19:09:01.7515738+02:00"
+      }
+    ],
+    "Username": "Raul",
+    "Password": "1234",
+    "Rol": "Client"
+  },
+  {
+    "Abonamente": [],
+    "RezervariIstoric": [],
+    "Username": "Bercea",
+    "Password": "1234",
+    "Rol": "Client"
+  }
+]

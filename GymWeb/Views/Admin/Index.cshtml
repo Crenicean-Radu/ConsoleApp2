@@ -1,0 +1,65 @@
+﻿@using GymWeb.Services
+@model GymService
+
+<h1 class="mb-4">🎛️ Panou de Control Admin</h1>
+
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Săli Deschise</div>
+            <div class="card-body">
+                <h2 class="card-title">@Model.GetSali().Count</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Clienți Înregistrați</div>
+            <div class="card-body">
+                <h2 class="card-title">@Model.GetAllClients().Count</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header">Clase Active</div>
+            <div class="card-body">
+                <h2 class="card-title">@Model.GetClase().Count</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>📋 Monitorizare Clase (Live)</h3>
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Nume Clasă</th>
+            <th>Sală</th>
+            <th>Antrenor</th>
+            <th>Grad Ocupare</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var c in Model.GetClase())
+        {
+            var sala = Model.GetSali().FirstOrDefault(s => s.Id == c.SalaId)?.Nume ?? "??";
+            var procent = (double)c.Rezervari.Count / c.Capacitate * 100;
+            
+            <tr>
+                <td>@c.Nume</td>
+                <td>@sala</td>
+                <td>@c.Antrenor</td>
+                <td>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: @procent%">
+                            @c.Rezervari.Count / @c.Capacitate
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

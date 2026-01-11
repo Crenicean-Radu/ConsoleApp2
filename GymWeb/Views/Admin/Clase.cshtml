@@ -1,0 +1,91 @@
+﻿@model List<GymWeb.Entities.ClasaFitness>
+@{
+    var sali = ViewBag.Sali as List<GymWeb.Entities.Sala>;
+}
+
+<h1>🏋️ Programare Clase Fitness</h1>
+
+@if (TempData["Eroare"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show">
+        🛑 <strong>Problemă:</strong> @TempData["Eroare"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Succes"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        ✅ @TempData["Succes"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<div class="card p-3 mb-4 border-success shadow-sm">
+    <h5 class="text-success">📅 Programează Clasă</h5>
+    <form action="/Admin/ProgrameazaClasa" method="post" class="row g-3">
+        <div class="col-md-3">
+            <label class="form-label small">Unde?</label>
+            <select name="salaId" class="form-select" required>
+                @if(sali != null)
+                {
+                    foreach(var s in sali)
+                    {
+                        <option value="@s.Id">@s.Nume</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label small">Ce?</label>
+            <input type="text" name="nume" class="form-control" placeholder="Ex: Yoga, Zumba" required>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label small">Cine?</label>
+            <input type="text" name="antrenor" class="form-control" placeholder="Nume Antrenor" required>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label small">Locuri?</label>
+            <input type="number" name="capacitate" class="form-control" value="20" required>
+        </div>
+        <div class="col-md-1 d-flex align-items-end">
+            <button type="submit" class="btn btn-success w-100">Add</button>
+        </div>
+    </form>
+</div>
+
+<table class="table align-middle table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Clasă</th>
+            <th>Sală</th>
+            <th>Antrenor</th>
+            <th>Capacitate</th>
+            <th>Ocupare</th>
+            <th>Acțiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            var numSala = sali?.FirstOrDefault(s => s.Id == c.SalaId)?.Nume ?? "??";
+            // Calculăm procentul pentru bara de progres
+            var procent = c.Capacitate > 0 ? ((double)c.Rezervari.Count / c.Capacitate * 100) : 0;
+            
+            <tr>
+                <td class="fw-bold">@c.Nume</td>
+                <td><span class="badge bg-light text-dark border">@numSala</span></td>
+                <td>@c.Antrenor</td>
+                <td>@c.Capacitate locuri</td>
+                <td style="width: 200px;">
+                    <small>@c.Rezervari.Count / @c.Capacitate</small>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: @procent%"></div>
+                    </div>
+                </td>
+                <td>
+                    <a href="/Admin/StergeClasa?id=@c.Id" class="btn btn-sm btn-outline-danger" onclick="return confirm('Sigur anulezi clasa? Toate rezervările vor fi șterse.');">Anulează</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

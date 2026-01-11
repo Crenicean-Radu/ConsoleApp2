@@ -1,0 +1,31 @@
+﻿@model GymWebUI.Entities.Client
+<h1>Salut, @Model.Username!</h1>
+@if(TempData["Msg"] != null) { <div class="alert alert-warning">@TempData["Msg"]</div> }
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Abonament Activ</h3>
+        @if(Model.AbonamentActiv != null && Model.AbonamentActiv.EsteActiv()) {
+            <div class="alert alert-success">
+                <strong>@Model.AbonamentActiv.NumeOferta</strong><br/>
+                Expira: @Model.AbonamentActiv.DataSfarsit<br/>
+                Locație: @(Model.AbonamentActiv.NumeSala ?? "Global")
+            </div>
+        } else {
+            <p class="text-danger">Nu ai abonament activ.</p>
+            <a asp-action="Oferte" class="btn btn-primary">Vezi Oferte</a>
+        }
+    </div>
+    
+    <div class="col-md-6">
+        <h3>Rezervările Tale</h3>
+        <ul class="list-group">
+            @foreach(var c in (List<GymWebUI.Entities.ClasaFitness>)ViewBag.ClaseRezervate) {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @c.Nume - @c.Data.ToString("g")
+                    <a asp-action="Anuleaza" asp-route-clasaId="@c.Id" class="btn btn-sm btn-outline-danger">Anulează</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

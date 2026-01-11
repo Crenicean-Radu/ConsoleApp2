@@ -1,0 +1,48 @@
+﻿@model List<GymWeb.Entities.ClasaFitness>
+@{
+    var sali = ViewBag.Sali as List<GymWeb.Entities.Sala>;
+}
+
+<h1>📅 Orar Clase Fitness</h1>
+<p class="text-muted">Rezervă locul tău. Sistemul verifică automat dacă ai abonament valid.</p>
+
+<div class="row">
+    @foreach(var c in Model)
+    {
+        var numeSala = sali.FirstOrDefault(s => s.Id == c.SalaId)?.Nume ?? "??";
+        var gradOcupare = (double)c.Rezervari.Count / c.Capacitate * 100;
+        string culoare = gradOcupare >= 100 ? "bg-secondary" : "bg-success";
+        bool ePlin = c.Rezervari.Count >= c.Capacitate;
+
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 class="card-title mb-0">@c.Nume</h5>
+                        <span class="badge bg-dark">@numeSala</span>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted">Antrenor: @c.Antrenor</h6>
+                    
+                    <div class="mb-3">
+                        <small>Locuri: @c.Rezervari.Count / @c.Capacitate</small>
+                        <div class="progress" style="height: 5px;">
+                            <div class="progress-bar @culoare" role="progressbar" style="width: @gradOcupare%"></div>
+                        </div>
+                    </div>
+
+                    <form action="/Client/FaRezervare" method="post">
+                        <input type="hidden" name="clasaId" value="@c.Id" />
+                        @if(ePlin)
+                        {
+                            <button disabled class="btn btn-secondary w-100">🚫 Clasă Plină</button>
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn btn-success w-100">✅ Rezervă Loc</button>
+                        }
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>

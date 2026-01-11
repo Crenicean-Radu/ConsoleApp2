@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "0f553954-003d-471c-af04-783f8bdabfd9",
+    "Nume": "Cardio",
+    "Antrenor": "Mihai",
+    "Data": "2026-01-05T21:52:25.2010718+02:00",
+    "Capacitate": 10,
+    "SalaId": "6d04769e-2202-4643-aeda-3483e5d62bcd",
+    "Rezervari": [
+      {
+        "Id": "39a11bbb-c983-4c9d-8a75-674d5e19ba0c",
+        "UsernameClient": "client",
+        "NumeClasa": "Cardio",
+        "DataRezervare": "2026-01-04T21:53:02.8914785+02:00"
+      }
+    ]
+  }
+]

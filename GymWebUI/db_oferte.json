@@ -1,0 +1,16 @@
+[
+  {
+    "Id": "7057dcbb-3746-4b3c-b7ac-19d7918f9fee",
+    "Nume": "FullTime",
+    "Pret": 150,
+    "ValabilitateZile": 20,
+    "SalaId": "6d04769e-2202-4643-aeda-3483e5d62bcd"
+  },
+  {
+    "Id": "7920d3fb-7923-4b5e-9203-64c497499764",
+    "Nume": "Semi",
+    "Pret": 50,
+    "ValabilitateZile": 15,
+    "SalaId": "29963b28-40c4-4257-8ebe-22cb142c9374"
+  }
+]

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GymWebUI.Entities.ClasaFitness>
+<h1>Orar Clase</h1>
+
+@if(TempData["Msg"] != null) { <div class="alert alert-info">@TempData["Msg"]</div> }
+
+@if(User.IsInRole("Admin") && ViewBag.SalaId != null) {
+    <a asp-action="AdaugaClasa" asp-route-salaId="@ViewBag.SalaId" class="btn btn-warning mb-3">➕ Adaugă Clasă Aici</a>
+}
+
+<table class="table table-striped">
+    <thead><tr><th>Clasa</th><th>Data</th><th>Locuri</th><th>Acțiuni</th></tr></thead>
+    <tbody>
+    @foreach(var c in Model) {
+        <tr>
+            <td>@c.Nume (Antrenor: @c.Antrenor)</td>
+            <td>@c.Data.ToString("g")</td>
+            <td>@c.Rezervari.Count / @c.Capacitate</td>
+            <td>
+                @if(User.IsInRole("Client")) {
+                    <a asp-action="Rezerva" asp-route-clasaId="@c.Id" class="btn btn-success btn-sm">Rezervă</a>
+                }
+                @if(User.IsInRole("Admin")) {
+                    <a asp-action="Rezervari" asp-route-id="@c.Id" class="btn btn-secondary btn-sm">Vezi Rezervări</a>
+                    <a asp-action="StergeClasa" asp-route-id="@c.Id" asp-route-salaId="@c.SalaId" class="btn btn-danger btn-sm">X</a>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,82 @@
+﻿@model List<GymWeb.Entities.OfertaAbonament>
+@{
+    var sali = ViewBag.Sali as List<GymWeb.Entities.Sala>;
+}
+
+<h1>🏷️ Gestiune Oferte Abonament</h1>
+
+@if (TempData["Eroare"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show">
+        🛑 <strong>Hopa!</strong> @TempData["Eroare"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Succes"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        ✅ @TempData["Succes"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<div class="card p-3 mb-4 border-warning shadow-sm">
+    <h5 class="text-warning text-dark">➕ Crează Ofertă Nouă</h5>
+    <form action="/Admin/AdaugaOferta" method="post" class="row g-3">
+        <div class="col-md-3">
+            <label class="form-label small">Denumire</label>
+            <input type="text" name="nume" class="form-control" placeholder="Ex: Full Access" required>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label small">Preț (RON)</label>
+            <input type="number" name="pret" class="form-control" placeholder="RON" step="0.01" required>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label small">Zile</label>
+            <input type="number" name="zile" class="form-control" placeholder="30" required>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label small">Valabilitate</label>
+            <select name="salaId" class="form-select">
+                <option value="">🌐 GLOBAL (Toate sălile)</option>
+                @if(sali != null)
+                {
+                    foreach(var s in sali)
+                    {
+                        <option value="@s.Id">🏢 Doar la: @s.Nume</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+            <button type="submit" class="btn btn-warning w-100 fw-bold">Lansează 🚀</button>
+        </div>
+    </form>
+</div>
+
+<table class="table table-bordered align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Nume Ofertă</th>
+            <th>Preț</th>
+            <th>Durată</th>
+            <th>Locație</th>
+            <th>Acțiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var of in Model)
+        {
+            var loc = of.SalaId == null ? "🌍 GLOBAL" : sali?.FirstOrDefault(s => s.Id == of.SalaId)?.Nume;
+            <tr>
+                <td class="fw-bold">@of.Nume</td>
+                <td class="text-success fw-bold">@of.Pret RON</td>
+                <td>@of.ValabilitateZile zile</td>
+                <td><span class="badge bg-secondary">@loc</span></td>
+                <td>
+                    <a href="/Admin/StergeOferta?id=@of.Id" class="btn btn-sm btn-danger" onclick="return confirm('Sigur ștergi oferta?');">🗑️ Șterge</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<GymWebUI.Entities.OfertaAbonament>
+<h1>Abonamente Disponibile</h1>
+
+@if(User.IsInRole("Admin")) {
+    <a asp-action="AdaugaOferta" class="btn btn-primary mb-3">➕ Adaugă Ofertă</a>
+}
+
+<div class="row">
+    @foreach(var o in Model) {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3>@o.Nume</h3>
+                    <h2>@o.Pret RON</h2>
+                    <p>Valabil: @o.ValabilitateZile zile</p>
+                    @if(User.IsInRole("Client")) {
+                        <a asp-action="Cumpara" asp-route-ofertaId="@o.Id" class="btn btn-success">Cumpără</a>
+                    }
+                    @if(User.IsInRole("Admin")) {
+                        <a asp-action="StergeOferta" asp-route-id="@o.Id" class="btn btn-danger">Șterge</a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

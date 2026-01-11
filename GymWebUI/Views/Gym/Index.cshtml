@@ -1,0 +1,24 @@
+﻿@model IEnumerable<GymWebUI.Entities.Sala>
+<h1>Sălile Noastre</h1>
+
+@if(User.IsInRole("Admin")) {
+    <a asp-action="AdaugaSala" class="btn btn-primary mb-3">➕ Adaugă Sală</a>
+}
+
+<table class="table">
+    <thead><tr><th>Nume</th><th>Program</th><th>Acțiuni</th></tr></thead>
+    <tbody>
+    @foreach(var s in Model) {
+        <tr>
+            <td>@s.Nume</td>
+            <td>@s.Program</td>
+            <td>
+                <a asp-action="Clase" asp-route-id="@s.Id" class="btn btn-info btn-sm">Orar Clase</a>
+                @if(User.IsInRole("Admin")) {
+                    <a asp-action="StergeSala" asp-route-id="@s.Id" class="btn btn-danger btn-sm">Șterge</a>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

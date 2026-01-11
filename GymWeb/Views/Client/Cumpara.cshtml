@@ -1,0 +1,55 @@
+﻿@model List<GymWeb.Entities.OfertaAbonament>
+@{
+    var sali = ViewBag.Sali as List<GymWeb.Entities.Sala>;
+}
+
+<h1 class="mb-4">🛒 Alege Abonamentul Tău</h1>
+
+<div class="row">
+    @foreach(var of in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm border-secondary">
+                <div class="card-header text-center bg-dark text-white">
+                    <h4 class="my-0 fw-normal">@of.Nume</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title text-center">@of.Pret <small class="text-muted">RON</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4 text-center">
+                        <li>⏳ Valabilitate: @of.ValabilitateZile zile</li>
+                        @if(of.SalaId != null)
+                        {
+                            // Oferta Locală (Fixă)
+                            var numeSala = sali.FirstOrDefault(s => s.Id == of.SalaId)?.Nume;
+                            <li class="text-success fw-bold">📍 Valabil doar la: @numeSala</li>
+                        }
+                        else
+                        {
+                            // Oferta Globală
+                            <li class="text-primary fw-bold">🌍 Acces la alegere!</li>
+                        }
+                    </ul>
+
+                    <form action="/Client/CumparaAbonament" method="post">
+                        <input type="hidden" name="ofertaId" value="@of.Id" />
+                        
+                        @if(of.SalaId == null)
+                        {
+                            <div class="mb-3">
+                                <label class="small text-muted">Alege sala de activare:</label>
+                                <select name="salaTargetId" class="form-select form-select-sm">
+                                    @foreach(var s in sali)
+                                    {
+                                        <option value="@s.Id">@s.Nume</option>
+                                    }
+                                </select>
+                            </div>
+                        }
+
+                        <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Cumpără Acum</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>

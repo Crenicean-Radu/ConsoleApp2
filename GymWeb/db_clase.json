@@ -1,0 +1,30 @@
+[
+  {
+    "Id": "0f553954-003d-471c-af04-783f8bdabfd9",
+    "Nume": "Cardio",
+    "Antrenor": "Mihai",
+    "Data": "2026-01-05T21:52:25.2010718+02:00",
+    "Capacitate": 10,
+    "SalaId": "6d04769e-2202-4643-aeda-3483e5d62bcd",
+    "Rezervari": [
+      {
+        "Id": "bdf843ad-eecb-4141-9d59-a078f18a89f7",
+        "UsernameClient": "client",
+        "NumeClasa": "Cardio",
+        "DataRezervare": "2026-01-06T15:35:40.729646+02:00"
+      },
+      {
+        "Id": "2df78ada-bac6-4320-ab23-26f151886f04",
+        "UsernameClient": "Mihai",
+        "NumeClasa": "Cardio",
+        "DataRezervare": "2026-01-06T16:04:30.0026525+02:00"
+      },
+      {
+        "Id": "1643f0c1-572e-41e4-906e-c506d71f2e2a",
+        "UsernameClient": "Raul",
+        "NumeClasa": "Cardio",
+        "DataRezervare": "2026-01-11T19:09:01.7515738+02:00"
+      }
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "Id": "7057dcbb-3746-4b3c-b7ac-19d7918f9fee",
+    "Nume": "FullTime",
+    "Pret": 150,
+    "ValabilitateZile": 20,
+    "SalaId": "6d04769e-2202-4643-aeda-3483e5d62bcd"
+  },
+  {
+    "Id": "7920d3fb-7923-4b5e-9203-64c497499764",
+    "Nume": "Semi",
+    "Pret": 50,
+    "ValabilitateZile": 15,
+    "SalaId": "29963b28-40c4-4257-8ebe-22cb142c9374"
+  },
+  {
+    "Id": "93933d35-e1a1-471c-8fea-94fb61e38bbc",
+    "Nume": "ToataZiua",
+    "Pret": 123,
+    "ValabilitateZile": 15,
+    "SalaId": "b94ae63d-21eb-461e-b167-19913d57f301"
+  },
+  {
+    "Id": "149f3f05-6a3e-45d1-9adc-e77acda4887d",
+    "Nume": "Matinal",
+    "Pret": -100,
+    "ValabilitateZile": -20,
+    "SalaId": "2f73e256-fd0e-4290-8e0c-671ec4bf2b79"
+  },
+  {
+    "Id": "9dd27fce-1389-409b-8829-4f52f1b7f759",
+    "Nume": "FullTime",
+    "Pret": 150,
+    "ValabilitateZile": 20,
+    "SalaId": "dcc8a0bf-383b-4271-9d69-1a20972bc72c"
+  }
+]

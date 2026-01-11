@@ -1,0 +1,32 @@
+[
+  {
+    "Id": "6d04769e-2202-4643-aeda-3483e5d62bcd",
+    "Nume": "Befit",
+    "Program": "8-20",
+    "Zone": []
+  },
+  {
+    "Id": "29963b28-40c4-4257-8ebe-22cb142c9374",
+    "Nume": "Truckers",
+    "Program": "10-23",
+    "Zone": []
+  },
+  {
+    "Id": "b94ae63d-21eb-461e-b167-19913d57f301",
+    "Nume": "Transformers",
+    "Program": "9-23",
+    "Zone": []
+  },
+  {
+    "Id": "2f73e256-fd0e-4290-8e0c-671ec4bf2b79",
+    "Nume": "SmartFit",
+    "Program": "10-24",
+    "Zone": []
+  },
+  {
+    "Id": "dcc8a0bf-383b-4271-9d69-1a20972bc72c",
+    "Nume": "ascasDC",
+    "Program": "08:00-22:00",
+    "Zone": []
+  }
+]

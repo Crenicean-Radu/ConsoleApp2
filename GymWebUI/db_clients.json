@@ -1,0 +1,26 @@
+[
+  {
+    "Abonamente": [
+      {
+        "Id": "16f671b9-bc70-4853-a99f-69c0ca8b22b5",
+        "NumeOferta": "FullTime",
+        "Pret": 150,
+        "DataStart": "2026-01-04T21:52:48.7634477+02:00",
+        "DataSfarsit": "2026-01-24T21:52:48.763556+02:00",
+        "SalaId": "6d04769e-2202-4643-aeda-3483e5d62bcd",
+        "NumeSala": "Befit"
+      }
+    ],
+    "RezervariIstoric": [
+      {
+        "Id": "39a11bbb-c983-4c9d-8a75-674d5e19ba0c",
+        "UsernameClient": "client",
+        "NumeClasa": "Cardio",
+        "DataRezervare": "2026-01-04T21:53:02.8914785+02:00"
+      }
+    ],
+    "Username": "client",
+    "Password": "client",
+    "Rol": "Client"
+  }
+]

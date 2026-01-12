@@ -127,5 +127,29 @@
     "Username": "Bercea",
     "Password": "1234",
     "Rol": "Client"
+  },
+  {
+    "Abonamente": [],
+    "RezervariIstoric": [],
+    "Username": "qwer",
+    "Password": "Aa123",
+    "Rol": "Client"
+  },
+  {
+    "Abonamente": [
+      {
+        "Id": "6d03ac9d-29d1-42ef-851c-d771901b253b",
+        "NumeOferta": "FullTime",
+        "Pret": 150,
+        "DataStart": "2026-01-12T10:16:20.1613383+02:00",
+        "DataSfarsit": "2026-02-01T10:16:20.1618061+02:00",
+        "SalaId": "6d04769e-2202-4643-aeda-3483e5d62bcd",
+        "NumeSala": "Befit"
+      }
+    ],
+    "RezervariIstoric": [],
+    "Username": "Raluca",
+    "Password": "123Aa",
+    "Rol": "Client"
   }
 ]

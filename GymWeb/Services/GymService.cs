@@ -49,7 +49,7 @@ namespace GymWeb.Services
         public string RegisterClient(string user, string pass)
         {
             //Setam formatul parolei
-            // Minim 8 caractere, o literă mare, o literă mică, o cifră
+            //Minim 8 caractere, o literă mare, o literă mică, o cifră
             string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{5,}$";
     
             if (!System.Text.RegularExpressions.Regex.IsMatch(pass, pattern))
@@ -277,5 +277,7 @@ namespace GymWeb.Services
             if (!_admins.Any()) _admins.Add(new Admin("admin", "admin"));
             if (!_clients.Any()) _clients.Add(new Client("client", "client"));
         }
+        
+        
     }
 }

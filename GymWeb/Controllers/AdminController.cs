@@ -134,5 +134,7 @@ namespace GymWeb.Controllers
             TempData["Succes"] = "Clasa anulată.";
             return RedirectToAction("Clase");
         }
+        
+        
     }
 }
